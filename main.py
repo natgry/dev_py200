@@ -57,10 +57,13 @@ class Library:
         :param id_: Идентификатор книги
         :return: индекс книги в списке
         """
-        for index, book_ in enumerate(self.books):
-            if book_.id == id_:
+        book_id_list = [book_.id for book_ in self.books]
+        if id_ not in book_id_list:
+            raise ValueError(f"Книги с запрашиваемым id={id_} не существует")
+
+        for index, book_id in enumerate(book_id_list):
+            if book_id == id_:
                 return index
-        raise ValueError(f"Книги с запрашиваемым id={id_} не существует")
 
     def __len__(self):
         return len(self.books)
@@ -91,3 +94,4 @@ if __name__ == '__main__':
 
     print(library_with_books.get_index_by_book_id(1))  # проверяем индекс книги с id = 1
     print(library_with_books.get_index_by_book_id(60))  # проверяем индекс книги с id, которого не существует
+
