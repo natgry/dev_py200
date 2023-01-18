@@ -68,7 +68,7 @@ class Library:
 
 if __name__ == '__main__':
     book_count = 50
-    book_gen_ = get_random_book(book_count=50, start_id_=2)
+    book_gen_ = get_random_book(book_count=50, start_id_=1)
     books_database = []
     for i in range(book_count):
         book = next(book_gen_)
@@ -89,5 +89,5 @@ if __name__ == '__main__':
     library_with_books = Library(books=list_books)  # инициализируем библиотеку с книгами
     print(library_with_books.get_next_book_id())  # проверяем следующий id для непустой библиотеки
 
-    print(library_with_books.get_index_by_book_id(2))  # проверяем индекс книги с id = 1
-    print(library_with_books.get_index_by_book_id(1))  # проверяем индекс книги с id, которого не существует
+    print(library_with_books.get_index_by_book_id(1))  # проверяем индекс книги с id = 1
+    print(library_with_books.get_index_by_book_id(60))  # проверяем индекс книги с id, которого не существует
