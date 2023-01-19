@@ -31,7 +31,7 @@ class Library:
         if books is None:
             self.books = []
         else:
-            self.books = books
+            self.books = books.copy()
 
     def get_next_book_id(self) -> int:
         """
