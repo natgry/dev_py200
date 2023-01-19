@@ -55,18 +55,25 @@ class Library:
         Если книги нет, то вызвать ошибку ValueError с сообщением:
         "Книги с запрашиваемым id не существует"
         :param id_: Идентификатор книги
-        :return: индекс книги в списке
+        :return: Индекс книги в списке
+        :raise ValueError: Если книги нет.
         """
-        book_id_list = [book_.id for book_ in self.books]
-        if id_ not in book_id_list:
+        if not [book_ for book_ in self.books if book_.id == id_]:
             raise ValueError(f"Книги с запрашиваемым id={id_} не существует")
 
-        for index, book_id in enumerate(book_id_list):
-            if book_id == id_:
-                return index
+        gen_ = ({"index": index, "id": book_.id} for index, book_ in enumerate(self.books))
+        for _ in range(len(self)):
+            elem = next(gen_)
+            if elem["id"] == id_:
+                return elem["index"]
 
     def __len__(self):
         return len(self.books)
+
+    def __getitem__(self, index: int) -> Any:
+        """ Метод возвращает идентификатор книги по указанному индексу. """
+        book_ = self.books[index]
+        return book_.id
 
 
 if __name__ == '__main__':
@@ -94,4 +101,3 @@ if __name__ == '__main__':
 
     print(library_with_books.get_index_by_book_id(1))  # проверяем индекс книги с id = 1
     print(library_with_books.get_index_by_book_id(60))  # проверяем индекс книги с id, которого не существует
-
