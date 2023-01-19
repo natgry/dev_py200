@@ -39,11 +39,11 @@ class Book:
         # Traceback (most recent call last):
         # ...
         # ValueError: Идентификатор книги должен быть положительным числом
-        # >>> book = Book(1, "", 200)
+        # >>> book = Book(id=1, name='', pages=561, year=1397, isbn13='978-1-86025-988-3', rating=8.990124180652794, price=59.75087190851305, authors=['Зоя Калинина'])
         # Traceback (most recent call last):
         # ...
         # ValueError: Название книги должно быть непустой строкой
-        # >>> book = Book(1, "test_name_1", 0)
+        # >>> book = Book(id=1, name='Унесённые ветром', pages=0, year=1397, isbn13='978-1-86025-988-3', rating=8.990124180652794, price=59.75087190851305, authors=['Зоя Калинина'])
         # Traceback (most recent call last):
         # ...
         # ValueError: Количество страниц в книге должно быть больше 0
