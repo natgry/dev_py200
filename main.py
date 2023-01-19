@@ -23,11 +23,22 @@ BOOKS_DATABASE = [
 class Library:
     """ Класс, который описывает библиотеку """
 
-    def __init__(self, books: list = None):
+    def __init__(self, books: list[Book] = None):
+        """
+        Создание и подготовка к работе объекта "Библиотека"
+
+        :param books: Список книг для добавления в библиотеку. Optional
+        """
         self.books = None
         self.init_books(books)
 
-    def init_books(self, books: list):
+    def init_books(self, books: list[Book]) -> None:
+        """
+        Инициализация списка книг в библиотеке.
+
+        :param books: Список книг для добавления в библиотеку
+        :return: None
+        """
         if books is None:
             self.books = []
         else:
