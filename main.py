@@ -58,22 +58,14 @@ class Library:
         :return: Индекс книги в списке
         :raise ValueError: Если книги нет.
         """
-        if not [book_ for book_ in self.books if book_.id == id_]:
+        found_index = [index for index, book_ in enumerate(self.books) if book_.id == id_]
+        if not found_index:
             raise ValueError(f"Книги с запрашиваемым id={id_} не существует")
-
-        gen_ = ({"index": index, "id": book_.id} for index, book_ in enumerate(self.books))
-        for _ in range(len(self)):
-            elem = next(gen_)
-            if elem["id"] == id_:
-                return elem["index"]
+        else:
+            return found_index[0]
 
     def __len__(self):
         return len(self.books)
-
-    def __getitem__(self, index: int) -> Any:
-        """ Метод возвращает идентификатор книги по указанному индексу. """
-        book_ = self.books[index]
-        return book_.id
 
 
 if __name__ == '__main__':
