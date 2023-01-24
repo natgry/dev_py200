@@ -72,6 +72,7 @@ class AudioBook(Book):
             raise ValueError(f"Продолжительность книги не может быть отрицательным числом")
         else:
             self.__duration = duration
+            
         super(AudioBook, self).__init__(name, author)
 
     def __str__(self):
