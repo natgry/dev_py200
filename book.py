@@ -79,7 +79,7 @@ class Book:
         :raise ValueError: Если идентификатор меньше 0.
         """
         if not isinstance(id_, int):
-            raise TypeError(f"Идентификатор книги должен быть типа {type(int)}")
+            raise TypeError(f"Идентификатор книги должен быть типа {int}")
         if id_ < 0:
             raise ValueError("Идентификатор книги должен быть положительным числом")
         self.id = id_
@@ -93,7 +93,7 @@ class Book:
         :raise ValueError: Если название книги является пустой строкой.
         """
         if not isinstance(name, str):
-            raise TypeError(f"Название книги должно быть типа {type(str)}")
+            raise TypeError(f"Название книги должно быть типа {str}")
         if len(name) == 0:
             raise ValueError("Название книги должно быть непустой строкой")
         self.name = name
@@ -106,7 +106,7 @@ class Book:
         :raise ValueError: Если количество страниц не является положительным числом.
         """
         if not isinstance(pages, int):
-            raise TypeError(f"Количество страниц в книге должно быть типа {type(int)}")
+            raise TypeError(f"Количество страниц в книге должно быть типа {int}")
         if pages < 1:
             raise ValueError("Количество страниц в книге должно быть больше 0")
         self.pages = pages
@@ -119,7 +119,7 @@ class Book:
         :raise ValueError: Если год издания книги не является положительным числом.
         """
         if not isinstance(year, int):
-            raise TypeError(f"Год издания книги должен быть типа {type(int)}")
+            raise TypeError(f"Год издания книги должен быть типа {int}")
         if year < 0:
             raise ValueError("Год издания книги должен быть больше 0")
         self.year = year
@@ -132,7 +132,7 @@ class Book:
         :raise ValueError: Если ISBN книги является пустой строкой.
         """
         if not isinstance(isbn13, str):
-            raise TypeError(f"ISBN книги должен быть типа {type(str)}")
+            raise TypeError(f"ISBN книги должен быть типа {str}")
         if len(isbn13) == 0:
             raise ValueError("ISBN книги должен быть непустой строкой")
         self.isbn13 = isbn13
@@ -145,7 +145,7 @@ class Book:
         :raise ValueError: Если рейтинг книги является отрицательным числом.
         """
         if not isinstance(rating, (int, float)):
-            raise TypeError(f"Рейтинг книги должен быть типа [{type(int)}, {type(float)}]")
+            raise TypeError(f"Рейтинг книги должен быть типа [{int}, {float}]")
         if rating < 0 or rating < 0.0:
             raise ValueError("Рейтинг книги должен быть больше 0")
         self.rating = rating
@@ -158,7 +158,7 @@ class Book:
         :raise ValueError: Если стоимость книги является отрицательным числом.
         """
         if not isinstance(price, (int, float)):
-            raise TypeError(f"Стоимость книги должна быть типа [{type(int)}, {type(float)}]")
+            raise TypeError(f"Стоимость книги должна быть типа [{int}, {float}]")
         if price < 0 or price < 0.0:
             raise ValueError("Стоимость книги должна быть больше 0")
         self.price = price
@@ -171,7 +171,7 @@ class Book:
         :raise ValueError: Если список авторов книги является пустым.
         """
         if not isinstance(authors, list):
-            raise TypeError(f"Список авторов книги должен быть типа {type(list)}")
+            raise TypeError(f"Список авторов книги должен быть типа {list}")
         if not authors:
             raise ValueError("Список авторов книги должен быть непустым")
         self.authors = authors
