@@ -164,8 +164,8 @@ class BusTicket(Ticket):
         return f"{super(BusTicket, self).__str__()}. Водитель {self.__driver}"
 
     def __repr__(self):
-        return f"{self.__class__.__name__}(owner={self.__owner!r}, price={self.__price!r}, " \
-               f"valid_before={self.__valid_before!r}, driver={self.__driver!r})"
+        return f"{self.__class__.__name__}(owner={self.owner!r}, price={self.price!r}, " \
+               f"valid_before={self.valid_before!r}, driver={self.driver!r})"
 
     @property
     def driver(self):
@@ -187,10 +187,7 @@ if __name__ == "__main__":
     print([ticket for ticket in tickets])
     print(ticket)
 
-    ticket.return_ticket()
-    print(ticket)
-    print(Ticket.TOTAL_TICKETS_NUMBER)
-    x = ticket.price
-    x = ticket.calc_price(ticket.price, 25)
-    print(x)
-    ...
+    ticket_bus = BusTicket('Natalia Gryaznova', 100.23, '22-03-2023', 'driver_1')
+    tickets = [ticket_bus]
+    print([ticket for ticket in tickets])
+    print(ticket_bus)
