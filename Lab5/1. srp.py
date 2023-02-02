@@ -27,7 +27,7 @@ class Duck:
 
     @name.setter
     def name(self, value):
-        self.__name = value
+        raise ValueError("Имя утки изменить нельзя")
 
 
 class Communicator:
@@ -39,6 +39,7 @@ class Communicator:
 
     # TODO Реализовать класс для взаимодействия двух и БОЛЕЕ уток
     def communicate(self, *duck_list: "Duck"):
+        """"""
         greeting = ''
         for i, duck in enumerate(duck_list):
             greet_list = duck_list[i+1:]
@@ -54,5 +55,5 @@ duck_3 = Duck("Duck_3")
 duck_4 = Duck("Duck_4")
 
 communicator = Communicator()
-result = communicator.communicate(duck_1, duck_2, duck_3)
+result = communicator.communicate(duck_1, duck_2, duck_3, duck_4)
 print(result)  # -> "Duck_1 поприветсвовала Duck_2, Duck_2 поприветствовала Duck_1"
