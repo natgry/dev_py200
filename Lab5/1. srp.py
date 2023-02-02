@@ -39,7 +39,6 @@ class Communicator:
 
     # TODO Реализовать класс для взаимодействия двух и БОЛЕЕ уток
     def communicate(self, *duck_list: "Duck"):
-        """"""
         greeting = ''
         for i, duck in enumerate(duck_list):
             greet_list = duck_list[i+1:]
