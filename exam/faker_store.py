@@ -3,10 +3,10 @@ from typing import Generator
 
 from product import Product
 
-FOOD_FILE = "food.txt"
-HOME_DEVICE_FILE = "device.txt"
-HOUSEWORK_FILE = "housework.txt"
-BUILDING_FILE = "building.txt"
+FOOD_FILE = "food.txt"              # продовольственные товары
+HOME_DEVICE_FILE = "device.txt"     # бытовая техника
+HOUSEWORK_FILE = "housework.txt"    # хозяйственный товары
+BUILDING_FILE = "building.txt"      # стройматериалы
 
 PRODUCT_TYPES = ['food', 'home_device', 'housework', 'building']
 
@@ -48,7 +48,8 @@ def get_product(p_type: PRODUCT_TYPES) -> str:
 def get_product_name(p_file: str) -> str:
     """
     Cчитывает только одну случайную строку с названием продукта из файла.
-    Список книг хранится в файле books.txt.
+    Список товаров хранится в файлах food.txt, device.txt,
+    housework.txt, building.txt.
     :param p_file: название файла со списком товаров
     :return: название товара
     """
