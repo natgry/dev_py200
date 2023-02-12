@@ -37,7 +37,8 @@ def get_price() -> float:
 def get_product(p_type: PRODUCT_TYPES) -> str:
     """
     Возвращает случайным образом название товара выбранного типа.
-    Список товаров хранится в файле *.txt.
+    Список товаров хранится в файлах food.txt, device.txt,
+    housework.txt, building.txt.
     :param p_type: тип товара
     :return: название товара
     """
@@ -48,8 +49,6 @@ def get_product(p_type: PRODUCT_TYPES) -> str:
 def get_product_name(p_file: str) -> str:
     """
     Cчитывает только одну случайную строку с названием продукта из файла.
-    Список товаров хранится в файлах food.txt, device.txt,
-    housework.txt, building.txt.
     :param p_file: название файла со списком товаров
     :return: название товара
     """
