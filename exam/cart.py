@@ -37,6 +37,8 @@ if __name__ == "__main__":
     cart.add_product(p2)
     cart.add_product(p3)
     cart.delete_product(p2)
+    assert len(cart.cart) == 2
     cart.delete_product(p1)
+    assert len(cart.cart) == 1
     cart.delete_product(p3)
-    x = cart
+    assert len(cart.cart) == 0
