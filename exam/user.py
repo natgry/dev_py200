@@ -7,8 +7,6 @@ ID = IdCounter()
 
 class User:
     """Класс, в котором хранится информация о пользователе"""
-    ID = IdCounter()
-
     def __init__(self, username, password):
         """
         Создание и подготовка к работе объекта "User"
